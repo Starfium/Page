@@ -1,0 +1,39 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(2px);
+    background-image: url("pictures/bg/bg1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    /* fixed can make the image appear cropped on some layouts; use scroll for reliable coverage */
+    background-attachment: scroll;
+    min-height: 100vh;
+}
+
+#main {
+    position: relative;
+    height: 91vh;
+    width: 85%;
+    z-index: 0;
+}
+#head {
+    position: relative;
+    height: 9vh;
+    width: 100%;
+}
