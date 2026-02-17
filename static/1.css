@@ -6,7 +6,7 @@
 html,
 body {
     /* 设置字体族：优先使用Inter字体，其次是Noto Sans SC，然后是系统默认的无衬线字体 */
-    font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', '微软雅黑', 'Noto Sans SC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     /* 设置高度为100% */
     height: 100%;
     /* 移除默认外边距 */
@@ -117,13 +117,14 @@ body {
     font-size: 2.5rem;       /* 设置字体大小为2.5rem */
     letter-spacing: 2.1px;   /* 设置字符间距为2.1px */
     font-weight: 700;        /* 设置字体粗细为700 */
-    color: #ffffff;         /* 设置文字颜色为纯白色 */
+    color: #d4d4d4;         /* 设置文字颜色为纯白色 */
+    text-shadow: 0 8px 30px rgba(255, 255, 255, 0.877);
 }
 
 /* 左侧描述文本样式 */
 #left-description {
     font-size: 1.2rem;      /* 设置字体大小为1.2rem */
-    color: rgba(255, 255, 255, 0.61);  /* 设置半透明白色文字 */
+    color: rgb(190, 190, 190);  /* 设置半透明白色文字 */
     text-align: center;      /* 设置文本居中对齐 */
     padding: 0 10px;        /* 设置左右内边距为10px */
 }
@@ -133,7 +134,9 @@ body {
     width: 95%;
     flex-wrap: wrap;        /* 设置弹性项自动换行 */
     justify-content: center; /* 设置水平居中对齐 */
-    gap: 10px;              /* 设置子元素之间的间距为10px */
+    gap: 13px;              /* 设置子元素之间的间距为10px */
+    margin-top: 20px;        /* 设置顶部外边距为20px */
+
 }
 /* 技能项样式 */
 .skill-item {
@@ -146,7 +149,73 @@ body {
 }
 .en{
     display: inline-block;
-    /* 微调英文基线，负值向上移动；可根据需要微调为 -0.06em 到 -0.10em */
     transform: translateY(0.1em);
     -webkit-transform: translateY(0.1em);
+}
+#right{
+    position: relative;       /* 设置相对定位 */
+    width: 78%;              /* 设置宽度为父容器的26% */
+    height: 95%;             /* 设置高度为父容器的80% */
+    margin-top: 2%;
+    padding-left: 30px;
+    border-radius: 10px;     /* 设置边框圆角为10px */
+}
+
+#right-title {
+    /* 设置字体大小为3.2rem */
+    font-size: 3.2rem;
+    /* 设置内边距：上36px，左右90px，下18px */
+    padding: 36px 90px 18px 90px;
+    /* 设置字体粗细为800（极粗） */
+    font-weight: 800;
+    /* gradient text with clipping for a polished look */
+/* 设置文本背景为渐变色，从米色(#F5F5DC)到浅棕色(#DEB887)，角度为135度 */
+    background: linear-gradient(135deg, #F5F5DC 0%, #DEB887 100%);
+    /* 使文本内容作为背景裁剪区域，仅显示背景在文本部分 */
+    -webkit-background-clip: text;
+    /* 标准属性，设置背景裁剪区域为文本 */
+    background-clip: text;
+    /* 将文本颜色设置为透明，以便显示背景 */
+    color: transparent;
+    /* 设置字符间距为0.6px，增加文本的可读性 */
+    letter-spacing: 0.6px;
+    /* 设置行高为1.05，使文本行与行之间有适当的间距 */
+    line-height: 1.05;
+    /* 为文本添加阴影效果，阴影为黑色，透明度为0.45，偏移8px垂直方向，模糊30px */
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.493);
+}
+
+/* 可选小标题（如果需要，可在 HTML 中添加 .right-subtitle 元素） */
+.right-subtitle{
+    display: block;
+    margin-top: 6px;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.72);
+    padding: 0 90px 30px 90px;
+    letter-spacing: 0.4px;
+}
+
+#right-description{
+/* 设置字体族，按优先级顺序排列，首先使用楷体(STXingkai)，然后是Comic Sans MS，接着是Chalkboard SE，最后是无衬线字体作为后备 */
+    font-family: 'STXingkai', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    /* 设置字体大小为2rem，相对于根元素字体大小 */
+    font-size: 2rem;
+    /* 设置内边距，上4px，右90px，下18px，左90px */
+    padding: 4px 90px 18px 90px;
+    /* 设置字体粗细为630，这是一个比常规粗体(bold)更粗的值 */
+    font-weight: 630;
+    /* 设置背景为渐变色，从135度角开始，从#f8e4a1(浅黄色)渐变到#fff06c(亮黄色) */
+    background: linear-gradient(135deg, #f8e4a1 0%, #fff06c 100%);
+    /* 设置文本裁剪为背景，使用-webkit-前缀以兼容WebKit浏览器 */
+    -webkit-background-clip: text;
+    /* 设置文本裁剪为背景，标准CSS属性 */
+    background-clip: text;
+    /* 设置文本颜色为完全透明(rgba(255, 255, 255, 0))，这样文本将显示为背景渐变效果 */
+    color: rgba(255, 255, 255, 0);
+    /* 设置字符间距为0.6px，使字符之间的距离略微增加 */
+    letter-spacing: 0.6px;
+    /* 设置行高为1.05，使文本行间距适中 */
+    line-height: 1.05;
+    /* 设置文本阴影，增加立体感：水平偏移0px，垂直偏移8px，模糊半径30px，阴影颜色为半透明黑色 */
+    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.342);
 }
