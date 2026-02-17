@@ -138,6 +138,41 @@ body {
     margin-top: 20px;        /* 设置顶部外边距为20px */
 
 }
+#left-con{
+    letter-spacing:2px;
+    color: rgb(202, 202, 202);
+    margin-top: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+#left-links{
+    margin-top: 0px;
+    display: flex;           /* 启用弹性布局 */
+    width: 95%;
+    flex-wrap: wrap;        /* 设置弹性项自动换行 */
+    justify-content: center; /* 设置水平居中对齐 */
+    gap: 50px;              /* 设置子元素之间的间距为10px */
+    margin-bottom: 60px;        /* 设置底部外边距为20px */
+}
+/* 左侧链接样式 */
+.link-item {
+    display: flex;           /* 启用弹性布局 */
+    align-items: center;     /* 设置垂直居中对齐 */
+    gap: 5px;                /* 设置子元素之间的间距为5px */
+    text-decoration: none;   /* 移除下划线 */
+    height: 40px;
+    width: 40px;
+}
+.link-item a {
+    display: block;
+    padding: 0;      /* 设置内边距 */
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;    /* 设置边框圆角 */
+    background-repeat: no-repeat; /* 设置背景图片不重复 */
+    background-size: cover; /* 设置背景图片覆盖整个元素 */
+}
 /* 技能项样式 */
 .skill-item {
     background-color: rgba(255, 255, 255, 0.2);  /* 设置半透明白色背景 */

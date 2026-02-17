@@ -11,7 +11,6 @@ function typeWriter(element, text, delay) {
 function randomText(){
     const texts = [
         "小保底不要歪 小保底不要歪 小保底不要歪",
-        "lzyz 真是 sm",
         "我是逆蝶",
         "被砖头砸晕算不算急性硅酸盐中毒",
         "浩洋先生沉鱼落雁闭月羞花",
