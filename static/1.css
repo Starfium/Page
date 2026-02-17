@@ -2,21 +2,45 @@
 5-125 line: 背景图片，头像和标题的样式
 
 */
+/* 全局样式设置 - 针对html和body元素 */
 html,
 body {
-    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    /* 设置字体族：优先使用Inter字体，其次是Noto Sans SC，然后是系统默认的无衬线字体 */
+    font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* 设置高度为100% */
     height: 100%;
+    /* 移除默认外边距 */
     margin: 0;
+    /* 设置字体粗细为400（常规） */
+    font-weight: 400;
+    /* 优化文本渲染，提高可读性 */
+    text-rendering: optimizeLegibility;
+    /* 启用抗锯齿，使文本边缘更平滑 */
+    -webkit-font-smoothing: antialiased;
+    /* Firefox系统的抗锯齿设置 */
+    -moz-osx-font-smoothing: grayscale;
+    /* 设置文本颜色为白色 */
+    color: #ffffff;
+    /* 添加文本阴影，提高文本在背景上的可读性 */
+    text-shadow: 0 0.6px 0 rgba(0,0,0,0.28);
 }
 
+/* 背景容器样式 */
 #background {
+    /* 固定定位，覆盖整个视口 */
     position: fixed;
     inset: 0;
+    /* 设置z-index为0，作为底层元素 */
     z-index: 0;
+    /* 使用弹性布局 */
     display: flex;
+    /* 设置弹性方向为垂直方向 */
     flex-direction: column;
+    /* 垂直方向两端对齐 */
     justify-content: space-between;
+    /* 水平居中对齐 */
     align-items: center;
+    /* 最小高度为视口高度 */
     min-height: 100vh;
 }
 
@@ -42,7 +66,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.25);
     /* adjust alpha to taste */
     z-index: 1;
     pointer-events: none;
@@ -50,112 +74,79 @@ body {
 
 #main {
     position: relative;
-    width: 95%;
+    width: 100vw;
     display: flex;
     z-index: 3;
     padding: 0 0;
-    height: calc(100vh - 13vh);;
+    height: 100vh;
     /* sit above the blurred background and dark overlay */
     /* sit above the blurred background layer and overlay */
 }
-
-#head {
-    position: relative;
-    height: 11vh;
-    width: 100%;
-}
-
-/* 头部内容容器样式 */
-#headcontent {
-    position: relative;
-    /* 设置为相对定位 */
-    display: flex;
-    /* 使用弹性布局 */
-    flex-direction: row;
-    /* 设置弹性方向为水平方向（使头像和标题并排显示） */
-    /* change to row so avatar and title are side-by-side */
-    /* 设置容器内部元素的对齐方式为居中，并设置元素之间的间距 */
-    align-items: center;
-    gap: 0.75rem;
-    /* 设置元素之间的间距为0.75rem */
-    height: 100%;
-    /* 设置容器高度为100% */
-    padding: 10px;
-    /* 设置容器内边距为10px */
-    margin: 0;
-    /* 设置容器外边距为0 */
-    background-color: rgba(0, 0, 0, 0.15);
-    /* 设置圆角*/
-    border-radius: 10px;
-}
-
-/* 设置头像元素的样式 */
-#avatar {
-    z-index: 4;
-    /* 设置元素的层叠级别为2，使其显示在其他元素之上 */
-    width: 10vh;
-    /* 设置头像宽度为视口高度的8% */
-    height: 10vh;
-    /* 设置头像高度为视口高度的8% */
-    border-radius: 50%;
-    /* 将头像设置为圆形 */
-    background-image: url("pictures/head/nkx.png");
-    /* 设置头像背景图片 */
-    background-size: cover;
-    /* 设置背景图片大小以覆盖整个元素 */
-    background-position: center center;
-    /* 设置背景图片居中显示 */
-    margin-right: 1rem;
-    /* 设置头像右边距为1rem */
-    margin-left: 130px;
-    margin-right: 40px;
-    /* remove blur on avatar so it stays crisp */
-}
-
-/* 设置标题元素的样式 */
-#title {
-    z-index: 2;
-    /* 设置元素的层叠级别为2，使其显示在其他元素之上 */
-    font-size: 2.8rem;
-    letter-spacing: 0.5px;
-    /* 设置字体大小为2rem */
-    font-weight: bold;
-    /* 设置字体加粗 */
-    color: rgb(209, 209, 209);
-    /* 设置文字颜色为白色 */
-}
-
+/* 左侧容器样式 */
 #left{
-    position: relative;
-    width: 26%;
-    height: 80%;
-    border-radius: 10px;
-    margin-top: 50px;
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.15);
-    gap: 20px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    position: relative;       /* 设置相对定位 */
+    width: 23%;              /* 设置宽度为父容器的26% */
+    height: 80%;             /* 设置高度为父容器的80% */
+    border-radius: 10px;     /* 设置边框圆角为10px */
+    margin-top: 100px;        /* 设置顶部外边距为50px */
+    margin-left: 80px;       /* 设置左侧外边距为40px */
+    display: flex;           /* 启用弹性布局 */
+    flex-direction: column;  /* 设置弹性方向为垂直方向 */
+    justify-content: center; /* 设置垂直居中对齐 */
+    align-items: center;     /* 设置水平居中对齐 */
+    background-color: rgba(0, 0, 0, 0.25);  /* 设置半透明黑色背景 */
+    gap: 20px;               /* 设置子元素之间的间距为20px */
+    flex-wrap: nowrap;       /* 设置不换行 */
+    justify-content: flex-start; /* 修改为顶部对齐 */
 }
 
+/* 左侧头像样式 */
 #left-avatar {
-    margin-top: 30px;
-    width: 12vh;
-    height: 12vh;
-    border-radius: 50%;
-    background-image: url("pictures/head/nkx.png");
-    background-size: cover;
-    background-position: center center;
-    margin-bottom: 10px;
+    margin-top: 30px;        /* 设置顶部外边距为30px */
+    width: 12vh;             /* 设置宽度为12vh */
+    height: 12vh;            /* 设置高度为12vh */
+    border-radius: 50%;      /* 设置圆形边框 */
+    background-image: url("pictures/head/nkx.png");  /* 设置背景图片 */
+    background-size: cover;  /* 设置背景图片覆盖整个元素 */
+    background-position: center center;  /* 设置背景图片居中 */
+    margin-bottom: 10px;     /* 设置底部外边距为10px */
 }
 
+/* 左侧标题样式 */
 #left-title {
-    font-size: 2.5rem;
-    letter-spacing: 0.5px;
-    font-weight: bold;
-    color: rgb(236, 236, 236);
+    font-size: 2.5rem;       /* 设置字体大小为2.5rem */
+    letter-spacing: 2.1px;   /* 设置字符间距为2.1px */
+    font-weight: 700;        /* 设置字体粗细为700 */
+    color: #ffffff;         /* 设置文字颜色为纯白色 */
+}
+
+/* 左侧描述文本样式 */
+#left-description {
+    font-size: 1.2rem;      /* 设置字体大小为1.2rem */
+    color: rgba(255, 255, 255, 0.61);  /* 设置半透明白色文字 */
+    text-align: center;      /* 设置文本居中对齐 */
+    padding: 0 10px;        /* 设置左右内边距为10px */
+}
+/* 左侧技能容器样式 */
+#left-skill{
+    display: flex;           /* 启用弹性布局 */
+    width: 95%;
+    flex-wrap: wrap;        /* 设置弹性项自动换行 */
+    justify-content: center; /* 设置水平居中对齐 */
+    gap: 10px;              /* 设置子元素之间的间距为10px */
+}
+/* 技能项样式 */
+.skill-item {
+    background-color: rgba(255, 255, 255, 0.2);  /* 设置半透明白色背景 */
+    color: rgb(236, 236, 236);  /* 设置浅灰色文字 */
+    padding: 5px 10px;      /* 设置内边距 */
+    border-radius: 10px;    /* 设置边框圆角 */
+    font-size: 1rem;        /* 设置字体大小为1rem */
+    font-weight:bolder;
+}
+.en{
+    display: inline-block;
+    /* 微调英文基线，负值向上移动；可根据需要微调为 -0.06em 到 -0.10em */
+    transform: translateY(0.1em);
+    -webkit-transform: translateY(0.1em);
 }
