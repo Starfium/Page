@@ -1,3 +1,7 @@
+/*
+5-125 line: 背景图片，头像和标题的样式
+
+*/
 html,
 body {
     font-family: 'Roboto', 'Noto Sans SC', sans-serif;
@@ -11,7 +15,7 @@ body {
     z-index: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-height: 100vh;
 }
@@ -38,7 +42,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.15);
     /* adjust alpha to taste */
     z-index: 1;
     pointer-events: none;
@@ -46,9 +50,11 @@ body {
 
 #main {
     position: relative;
-    height: 89vh;
-    width: 85%;
+    width: 95%;
+    display: flex;
     z-index: 3;
+    padding: 0 0;
+    height: calc(100vh - 13vh);;
     /* sit above the blurred background and dark overlay */
     /* sit above the blurred background layer and overlay */
 }
@@ -74,10 +80,13 @@ body {
     /* 设置元素之间的间距为0.75rem */
     height: 100%;
     /* 设置容器高度为100% */
-    padding: 0;
-    /* 设置容器内边距为0 */
+    padding: 10px;
+    /* 设置容器内边距为10px */
     margin: 0;
     /* 设置容器外边距为0 */
+    background-color: rgba(0, 0, 0, 0.15);
+    /* 设置圆角*/
+    border-radius: 10px;
 }
 
 /* 设置头像元素的样式 */
@@ -114,4 +123,39 @@ body {
     /* 设置字体加粗 */
     color: rgb(209, 209, 209);
     /* 设置文字颜色为白色 */
+}
+
+#left{
+    position: relative;
+    width: 26%;
+    height: 80%;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+#left-avatar {
+    margin-top: 30px;
+    width: 12vh;
+    height: 12vh;
+    border-radius: 50%;
+    background-image: url("pictures/head/nkx.png");
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 10px;
+}
+
+#left-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: rgb(236, 236, 236);
 }
